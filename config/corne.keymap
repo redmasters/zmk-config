@@ -41,7 +41,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q           &kp W  &kp E           &kp R           &kp T        &mt LS(F6) Y  &kp U            &kp I      &mt LS(F6) O    &kp P                   &kp BSPC
+&kp ESCAPE  &kp Q           &kp W  &kp E           &kp R           &kp T        &mt LS(F6) Y  &kp U            &kp I      &mt LS(F9) O    &kp P                   &kp BSPC
 &kp TAB     &mt LEFT_ALT A  &kp S  &kp D           &kp F           &kp G        &kp H         &kp J            &kp K      &mt LEFT_ALT L  &mt LEFT_GUI SEMICOLON  &kp SQT
 &kp LCTRL   &kp Z           &kp X  &kp C           &kp V           &kp B        &kp N         &kp M            &kp COMMA  &kp DOT         &kp FSLH                &kp ENTER
                                    &kp LEFT_SHIFT  &lt 1 LEFT_GUI  &lt 5 TAB    &kp SPACE     &lt 2 BACKSPACE  &lt 3 DEL
