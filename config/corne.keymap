@@ -39,9 +39,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q           &kp W  &kp E           &kp R           &kp T        &mt LS(F6) Y  &kp U            &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB     &mt LEFT_ALT A  &kp S  &kp D           &kp F           &kp G        &kp H         &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL   &kp Z           &kp X  &kp C           &kp V           &kp B        &kp N         &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+&kp ESCAPE  &kp Q           &kp W  &kp E           &kp R           &kp T        &mt LS(F6) Y  &kp U            &kp I      &mt LS(F6) O  &kp P     &kp BSPC
+&kp TAB     &mt LEFT_ALT A  &kp S  &kp D           &kp F           &kp G        &kp H         &kp J            &kp K      &kp L         &kp SEMI  &kp SQT
+&kp LCTRL   &kp Z           &kp X  &kp C           &kp V           &kp B        &kp N         &kp M            &kp COMMA  &kp DOT       &kp FSLH  &kp ENTER
                                    &kp LEFT_SHIFT  &lt 1 LEFT_GUI  &lt 5 TAB    &kp SPACE     &lt 2 BACKSPACE  &lt 3 DEL
             >;
         };
@@ -54,10 +54,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none      &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&none      &none   &none   &none   &none   &none        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT  &trans  &trans  &trans  &trans  &trans       &trans    &trans    &trans    &trans     &trans  &trans
-                           &trans  &trans  &kp SPACE    &kp RET   &trans    &kp RALT
+&none   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+&none   &none   &none   &none   &none   &none        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans    &trans    &trans    &trans     &trans  &trans
+                        &trans  &trans  &kp SPACE    &kp RET   &trans    &kp RALT
             >;
         };
 
