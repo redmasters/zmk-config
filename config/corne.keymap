@@ -34,6 +34,8 @@
             label = "A_LEFT_ALT";
             #binding-cells = <0>;
             bindings = <&kp A>, <&kp LEFT_ALT>;
+
+            tapping-term-ms = <175>;
         };
 
         l_right_alt: l_right_alt {
@@ -41,6 +43,26 @@
             label = "L_RIGHT_ALT";
             #binding-cells = <0>;
             bindings = <&kp L>, <&kp LEFT_ALT>;
+
+            tapping-term-ms = <175>;
+        };
+
+        y_shift_f6: y_shift_f6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Y_SHIFT_F6";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&kp LS(F6)>;
+
+            tapping-term-ms = <175>;
+        };
+
+        o_shift_f9: o_shift_f9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "O_SHIFT_F9";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp LS(F9)>;
+
+            tapping-term-ms = <175>;
         };
     };
 
@@ -55,10 +77,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q        &kp W  &kp E           &kp R           &kp T        &mt LS(F6) Y  &kp U            &kp I      &mt LS(F9) O  &kp P                   &kp BSPC
-&kp TAB     &a_left_alt  &kp S  &kp D           &kp F           &kp G        &kp H         &kp J            &kp K      &l_right_alt  &mt LEFT_GUI SEMICOLON  &kp SQT
-&kp LCTRL   &kp Z        &kp X  &kp C           &kp V           &kp B        &kp N         &kp M            &kp COMMA  &kp DOT       &kp FSLH                &kp ENTER
-                                &kp LEFT_SHIFT  &lt 1 LEFT_GUI  &lt 5 TAB    &kp SPACE     &lt 2 BACKSPACE  &lt 3 DEL
+&kp ESCAPE  &kp Q        &kp W  &kp E           &kp R           &kp T        &y_shift_f6  &kp U            &kp I      &o_shift_f9   &kp P                   &kp BSPC
+&kp TAB     &a_left_alt  &kp S  &kp D           &kp F           &kp G        &kp H        &kp J            &kp K      &l_right_alt  &mt LEFT_GUI SEMICOLON  &kp SQT
+&kp LCTRL   &kp Z        &kp X  &kp C           &kp V           &kp B        &kp N        &kp M            &kp COMMA  &kp DOT       &kp FSLH                &kp ENTER
+                                &kp LEFT_SHIFT  &lt 1 LEFT_GUI  &lt 5 TAB    &kp SPACE    &lt 2 BACKSPACE  &lt 3 DEL
             >;
         };
 
