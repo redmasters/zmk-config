@@ -9,25 +9,24 @@
 #include <dt-bindings/zmk/keys.h>
 
 // Layer definitions
-    #define BASE 0
-    #define NAV  1
-    #define NUM 2
-    #define FUN 3
-    #define SYS 4
-    #define MOUSE 5
 
+#define BASE 0
+#define NAV  1
+#define NUM 2
+#define FUN 3
+#define SYS 4
+#define MOUSE 5
 
 // long-tap action on hold, short-tap action on all interrupts
+
 &mt {
-    flavor = "tap-preferred"; \
-    tapping-term-ms = <220>; \
-    quick-tap-ms = <220>; \
+    flavor = "tap-preferred";
+    tapping-term-ms = <220>;
+    quick-tap-ms = <220>;
     hold-trigger-key-positions = <0>;
 };
 
-&sk {
-    ignore-modifiers;
-};
+&sk { ignore-modifiers; };
 
 / {
     behaviors {
@@ -96,10 +95,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q        &kp W  &kp E           &kp R           &kp T        &y_shift_f6  &kp U        &kp I      &o_shift_f9   &kp P                   &kp BSPC
-&kp TAB     &a_left_alt  &kp S  &kp D           &kp F           &kp G        &kp H        &kp J        &kp K      &l_right_alt  &mt LEFT_GUI SEMICOLON  &kp SQT
-&kp LCTRL   &kp Z        &kp X  &kp C           &kp V           &kp B        &kp N        &kp M        &kp COMMA  &kp DOT       &kp FSLH                &kp ENTER
-                                &kp LEFT_SHIFT  &lt 1 LEFT_GUI  &lt 5 TAB    &kp ENTER    &lt 2 SPACE  &lt 3 DEL
+&kp ESCAPE  &kp Q           &kp W  &kp E           &kp R           &kp T        &y_shift_f6  &kp U        &kp I      &o_shift_f9   &kp P                   &kp BSPC
+&kp TAB     &mt LEFT_ALT A  &kp S  &kp D           &kp F           &kp G        &kp H        &kp J        &kp K      &l_right_alt  &mt LEFT_GUI SEMICOLON  &kp SQT
+&kp LCTRL   &kp Z           &kp X  &kp C           &kp V           &kp B        &kp N        &kp M        &kp COMMA  &kp DOT       &kp FSLH                &kp ENTER
+                                   &kp LEFT_SHIFT  &lt 1 LEFT_GUI  &lt 5 TAB    &kp ENTER    &lt 2 SPACE  &lt 3 DEL
             >;
         };
 
