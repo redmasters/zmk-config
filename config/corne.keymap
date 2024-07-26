@@ -24,6 +24,7 @@
     tapping-term-ms = <220>;
     quick-tap-ms = <220>;
     hold-trigger-key-positions = <0>;
+    require-prior-idle-ms = <125>;
 };
 
 &sk { ignore-modifiers; };
@@ -110,10 +111,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans            &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6    &kp N7    &kp N8         &kp N9     &kp N0   &kp BSPC
-&trans            &trans  &trans  &trans  &trans  &trans       &kp LEFT  &kp DOWN  &kp UP         &kp RIGHT  &trans   &trans
-&kp LC(LEFT_GUI)  &trans  &trans  &trans  &trans  &trans       &kp INS   &kp HOME  &kp PAGE_DOWN  &kp PG_UP  &kp END  &trans
-                                  &trans  &trans  &kp SPACE    &kp RET   &trans    &kp RALT
+&kp TILDE         &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &trans    &kp AMPERSAND  &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &mt UNDER KP_MINUS  &mt PLUS KP_EQUAL
+&trans            &trans    &trans  &trans    &trans      &trans         &kp LEFT  &kp DOWN       &kp UP                           &kp RIGHT                          &trans              &kp PIPE
+&kp LC(LEFT_GUI)  &trans    &trans  &trans    &trans      &trans         &kp INS   &kp HOME       &kp PAGE_DOWN                    &kp PG_UP                          &kp END             &trans
+                                    &trans    &trans      &kp SPACE      &kp RET   &trans         &kp RALT
             >;
         };
 
@@ -125,10 +126,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp N7  &kp N8    &kp N9  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &kp N4  &kp N5    &kp N6  &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &kp N1  &kp N2    &kp N3  &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &kp N0  &kp SPACE    &kp RET    &trans     &kp RALT
+&kp GRAVE  &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
+&kp LCTRL  &trans  &kp N4  &kp N5    &kp N6  &trans       &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans  &kp N1  &kp N2    &kp N3  &trans       &tog 6     &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+                           &kp LGUI  &kp N0  &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
 
@@ -156,6 +157,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &copy_paste  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans       &trans  &trans
+            >;
+        };
+
+        numpad {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp N7  &kp N8  &kp N9  &kp MINUS        &kp PLUS
+&trans  &trans  &trans  &trans  &trans  &trans    &kp KP_DOT     &kp N4  &kp N5  &kp N6  &kp KP_ASTERISK  &kp KP_DIVIDE
+&trans  &trans  &trans  &trans  &trans  &trans    &trans         &kp N1  &kp N2  &kp N3  &trans           &trans
+                        &trans  &trans  &trans    &trans         &trans  &kp N0
             >;
         };
     };
