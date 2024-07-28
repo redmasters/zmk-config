@@ -168,6 +168,15 @@
                         &trans  &trans  &trans    &trans         &trans  &kp N0
             >;
         };
+
+        dota {
+            bindings = <
+&trans  &kp Q  &kp W  &kp E   &kp R      &kp T      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A  &kp S  &kp D   &kp F      &kp G      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Z  &kp X  &kp C   &kp V      &kp B      &trans  &trans  &trans  &trans  &trans  &trans
+                      &trans  &kp SPACE  &kp TAB    &trans  &trans  &trans
+            >;
+        };
     };
 
     conditional_layers {
