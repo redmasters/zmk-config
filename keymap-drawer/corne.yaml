@@ -313,7 +313,7 @@ layers:
   - I
   - O
   - P
-  - {t: '6', h: toggle}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - A
   - S
@@ -356,7 +356,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '7', h: toggle}
   - F11
   - F4
   - F5
