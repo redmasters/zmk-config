@@ -16,6 +16,9 @@
 #define FUN 3
 #define SYS 4
 #define MOUSE 5
+#define NUMPAD 6
+#define DOTA 7
+#define FN_DOTA 8
 
 // long-tap action on hold, short-tap action on all interrupts
 
@@ -88,7 +91,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        BASE {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -103,7 +106,7 @@
             >;
         };
 
-        nav {
+        NAV {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -118,7 +121,7 @@
             >;
         };
 
-        num {
+        NUM {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -133,7 +136,7 @@
             >;
         };
 
-        fun {
+        FUN {
             bindings = <
 &kp F12  &kp F7  &kp F8  &kp F9  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
 &kp F11  &kp F4  &kp F5  &kp F6  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
@@ -142,7 +145,7 @@
             >;
         };
 
-        sys {
+        SYS {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_CLR    &bt BT_CLR_ALL
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 2  &bt BT_SEL 3
@@ -151,7 +154,7 @@
             >;
         };
 
-        mouse {
+        MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans  &trans  &trans  &trans  &trans
@@ -160,7 +163,7 @@
             >;
         };
 
-        numpad {
+        NUMPAD {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp N7  &kp N8  &kp N9  &kp MINUS        &kp PLUS
 &trans  &trans  &trans  &trans  &trans  &trans    &kp KP_DOT     &kp N4  &kp N5  &kp N6  &kp KP_ASTERISK  &kp KP_DIVIDE
@@ -169,7 +172,7 @@
             >;
         };
 
-        dota {
+        DOTA {
             bindings = <
 &trans  &kp Q  &kp W  &kp E           &kp R        &kp T      &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
 &trans  &kp A  &kp S  &kp D           &kp F        &kp G      &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
@@ -178,7 +181,7 @@
             >;
         };
 
-        fun_dota {
+        FN_DOTA {
             bindings = <
 &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
