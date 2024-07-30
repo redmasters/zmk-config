@@ -101,9 +101,9 @@ layers:
   - BSPC
   - LCTRL
   - {t: ▽, type: trans}
-  - '4'
-  - '5'
-  - '6'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '-'
   - '*'
@@ -113,9 +113,9 @@ layers:
   - '`'
   - LSHFT
   - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '6', h: toggle}
   - +
@@ -123,9 +123,9 @@ layers:
   - '}'
   - '|'
   - '~'
-  - LGUI
-  - '0'
-  - SPACE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - RET
   - {type: held}
   - RALT
