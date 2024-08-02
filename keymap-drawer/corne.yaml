@@ -124,7 +124,7 @@ layers:
   - '|'
   - '~'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LEFT ALT
   - {t: ▽, type: trans}
   - RET
   - {type: held}
