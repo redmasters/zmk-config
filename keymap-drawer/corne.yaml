@@ -316,9 +316,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - A
-  - S
-  - D
-  - F
+  - {t: S, h: LEFT SHIFT}
+  - {t: D, h: LCTRL}
+  - {t: F, h: LALT}
   - G
   - H
   - J
@@ -326,7 +326,7 @@ layers:
   - L
   - ;
   - ''''
-  - {t: ▽, type: trans}
+  - LEFT ALT
   - Z
   - X
   - C
