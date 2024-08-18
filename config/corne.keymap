@@ -120,6 +120,7 @@
 &kp LC(LEFT_GUI)  &trans    &trans  &trans    &trans      &trans         &kp INS   &kp HOME       &kp PAGE_DOWN                    &kp PG_UP                          &kp END             &trans
                                     &trans    &trans      &kp SPACE      &kp RET   &trans         &kp RALT
             >;
+            display-name = "NAV";
         };
 
         NUM {
@@ -135,6 +136,7 @@
 &kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog 6     &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
                            &trans  &kp LEFT_ALT  &trans    &kp RET    &trans        &kp RALT
             >;
+            display-name = "NUM";
         };
 
         FUN {
@@ -144,6 +146,7 @@
 &kp F10  &kp F1  &kp F2  &kp F3  &trans     &trans          &kp PRINTSCREEN  &trans  &trans  &trans  &trans  &trans
                          &trans  &kp LCTRL  &kp LEFT_ALT    &trans           &trans  &trans
             >;
+            display-name = "FUN";
         };
 
         SYS {
@@ -153,6 +156,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+            display-name = "SYS";
         };
 
         MOUSE {
@@ -162,6 +166,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &copy_paste  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans       &trans  &trans
             >;
+            display-name = "MOUSE";
         };
 
         NUMPAD {
@@ -171,6 +176,7 @@
 &trans  &trans  &trans  &trans  &trans  &tog 7    &trans         &kp N1  &kp N2  &kp N3  &trans           &trans
                         &trans  &trans  &trans    &trans         &trans  &kp N0
             >;
+            display-name = "NUMPAD";
         };
 
         DOTA {
@@ -180,6 +186,7 @@
 &kp LEFT_ALT  &kp Z  &kp X             &kp C           &kp V        &kp B      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
                                        &kp LEFT_SHIFT  &lt 8 SPACE  &kp TAB    &trans  &trans  &trans
             >;
+            display-name = "DOTA";
         };
 
         FN_DOTA {
@@ -189,6 +196,7 @@
 &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                          &trans  &trans  &trans    &trans  &trans  &trans
             >;
+            display-name = "FN_DOTA";
         };
     };
 
