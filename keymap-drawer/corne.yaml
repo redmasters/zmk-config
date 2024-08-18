@@ -37,13 +37,13 @@ layers:
   - .
   - /
   - ENTER
-  - {t: ESC, h: '3'}
-  - {t: LEFT GUI, h: '1'}
-  - {t: TAB, h: '5'}
+  - {t: ESC, h: FUN}
+  - {t: LEFT GUI, h: NAV}
+  - {t: TAB, h: MOUSE}
   - ENTER
-  - {t: SPACE, h: '2'}
+  - {t: SPACE, h: NUM}
   - {t: BACKSPACE, h: DELETE}
-  '1':
+  NAV:
   - '~'
   - '!'
   - '@'
@@ -86,7 +86,7 @@ layers:
   - RET
   - {t: ▽, type: trans}
   - RALT
-  '2':
+  NUM:
   - '`'
   - '1'
   - '2'
@@ -117,7 +117,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '6', h: toggle}
+  - {t: NUMPAD, h: toggle}
   - +
   - '{'
   - '}'
@@ -129,7 +129,7 @@ layers:
   - RET
   - {type: held}
   - RALT
-  '3':
+  FUN:
   - F12
   - F7
   - F8
@@ -172,7 +172,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '4':
+  SYS:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -215,7 +215,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  '5':
+  MOUSE:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -258,7 +258,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '6':
+  NUMPAD:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -288,7 +288,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '7', h: toggle}
+  - {t: DOTA, h: toggle}
   - {t: ▽, type: trans}
   - '1'
   - '2'
@@ -301,7 +301,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '0'
-  '7':
+  DOTA:
   - {t: ▽, type: trans}
   - Q
   - W
@@ -339,12 +339,12 @@ layers:
   - /
   - {t: ▽, type: trans}
   - LEFT SHIFT
-  - {t: SPACE, h: '8'}
+  - {t: SPACE, h: FN_DOTA}
   - TAB
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '8':
+  FN_DOTA:
   - F12
   - F7
   - F8
@@ -356,7 +356,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '7', h: toggle}
+  - {t: DOTA, h: toggle}
   - F11
   - F4
   - F5
