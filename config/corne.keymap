@@ -104,6 +104,7 @@
 &kp LCTRL   &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &kp ENTER
                                      &lt 3 ESC           &lt 1 LEFT_GUI  &lt 5 TAB         &kp ENTER       &lt 2 SPACE     &mt DELETE BACKSPACE
             >;
+            display-name = "BASE";
         };
 
         NAV {
