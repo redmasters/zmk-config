@@ -427,7 +427,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: SPACE, h: FN_MBL}
   - TAB
-  - {t: ▽, type: trans}
+  - ENTER
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   FN_MBL:
