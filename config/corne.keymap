@@ -210,10 +210,10 @@
 
         MBL {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E   &kp R         &kp T      &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
-&kp LSHFT  &kp A  &kp S  &kp D   &kp F         &kp G      &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
-&trans     &kp Z  &kp X  &kp C   &kp V         &kp B      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
-                         &trans  &lt 10 SPACE  &kp TAB    &trans  &trans  &trans
+&kp ESC    &kp Q  &kp W  &kp E   &kp R         &kp T      &kp Y      &kp U   &kp I      &kp O    &kp P     &trans
+&kp LSHFT  &kp A  &kp S  &kp D   &kp F         &kp G      &kp H      &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+&trans     &kp Z  &kp X  &kp C   &kp V         &kp B      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                         &trans  &lt 10 SPACE  &kp TAB    &kp ENTER  &trans  &trans
             >;
         };
 
