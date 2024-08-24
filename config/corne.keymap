@@ -104,7 +104,6 @@
 &kp LCTRL   &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &kp ENTER
                                      &lt 3 ESC           &lt 1 LEFT_GUI  &lt 5 TAB         &kp ENTER       &lt 2 SPACE     &mt DELETE BACKSPACE
             >;
-
             display-name = "BASE";
         };
 
@@ -121,7 +120,6 @@
 &kp LC(LEFT_GUI)  &trans    &trans  &trans    &trans      &trans         &kp INS   &kp HOME       &kp PAGE_DOWN                    &kp PG_UP                          &kp END             &trans
                                     &trans    &trans      &kp SPACE      &kp RET   &trans         &kp RALT
             >;
-
             display-name = "NAV";
         };
 
@@ -138,7 +136,6 @@
 &kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog 6     &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
                            &trans  &kp LEFT_ALT  &trans    &kp RET    &trans        &kp RALT
             >;
-
             display-name = "NUM";
         };
 
@@ -149,7 +146,6 @@
 &kp F10  &kp F1  &kp F2  &kp F3  &trans     &trans          &kp PRINTSCREEN  &trans  &trans  &trans  &trans  &trans
                          &trans  &kp LCTRL  &kp LEFT_ALT    &trans           &trans  &trans
             >;
-
             display-name = "FUN";
         };
 
@@ -160,7 +156,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
-
             display-name = "SYS";
         };
 
@@ -171,7 +166,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &copy_paste  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans       &trans  &trans
             >;
-
             display-name = "MOUSE";
         };
 
@@ -182,7 +176,6 @@
 &trans  &trans  &trans  &trans  &tog 9  &tog 7    &trans         &kp N1  &kp N2  &kp N3  &trans           &trans
                         &trans  &trans  &trans    &trans         &trans  &kp N0
             >;
-
             display-name = "NUMPAD";
         };
 
@@ -193,7 +186,6 @@
 &kp LEFT_ALT  &kp Z  &kp X             &kp C           &kp V        &kp B      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
                                        &kp LEFT_SHIFT  &lt 8 SPACE  &kp TAB    &trans  &trans  &trans
             >;
-
             display-name = "DOTA";
         };
 
@@ -204,7 +196,6 @@
 &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                          &trans  &trans  &trans    &trans  &trans  &trans
             >;
-
             display-name = "FN_DOTA";
         };
 
@@ -215,6 +206,7 @@
 &trans     &kp Z  &kp X  &kp C   &kp V         &kp B      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
                          &trans  &lt 10 SPACE  &kp TAB    &kp ENTER  &trans  &trans
             >;
+            display-name = "MBL";
         };
 
         FN_MBL {
@@ -224,6 +216,7 @@
 &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans
                          &trans  &trans  &trans     &trans  &trans  &trans
             >;
+            display-name = "FN_MBL";
         };
     };
 
