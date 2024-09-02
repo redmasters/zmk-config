@@ -55,7 +55,7 @@ layers:
   - {t: (, h: '{'}
   - {t: ), h: '}'}
   - {t: KP MINUS, h: _}
-  - {t: KP EQUAL, h: +}
+  - {t: '=', h: +}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
