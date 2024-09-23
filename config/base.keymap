@@ -44,7 +44,7 @@ ZMK_HOLD_TAP(hmr,
 /* Custom behaviors */
 
 // tap: copy | double-tap: cut
-ZMK_TAP_DANCE(copy_cut, tap_dance,
+ZMK_TAP_DANCE(copy_cut,
     tapping-term-ms = <200>;
     bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
