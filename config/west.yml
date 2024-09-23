@@ -1,4 +1,7 @@
 manifest:
+  defaults:
+    remote: urob
+
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
