@@ -164,7 +164,7 @@ ZMK_LAYER(base,
 &kp ESCAPE   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
 &kp TAB      &kp A  &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &hml LEFT_GUI G    &hmr LEFT_GUI H  &hmr LEFT_ALT J  &hmr LEFT_CONTROL K    &hmr LEFT_SHIFT L  &kp SEMICOLON  &kp SQT
 &kp LCTRL    &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &kp ENTER
-                                     &lt 3 ESC           &lt NAV LEFT_GUI  &kp TAB         &kp RET       &lt NUM SPACE     &bs_del_num
+                                     &lt FN ESC           &lt NAV LEFT_GUI  &kp TAB         &kp RET       &lt NUM SPACE     &bs_del_num
 )
 
 ZMK_LAYER(nav,
@@ -180,5 +180,10 @@ ZMK_LAYER(num,
 &kp LCTRL  &trans  &trans  &trans  &trans        &trans    &kp MINUS  &kp ASTERISK  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog 6     &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
                            &trans  &kp LEFT_ALT  &trans    &kp RET    &trans        &kp RALT
+
+)
+
+ZMK_LAYER(fn,
+
 
 )
