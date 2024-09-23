@@ -62,12 +62,21 @@ ZMK_MACRO(win_sleep,
     tap-ms = <5>;
     bindings = <&kp LG(X) &kp U &kp S>;
 )
+ 
+// Alt+Tab swapper, requires PR #1366
+ZMK_TRI_STATE(swapper,
+    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+    ignored-key-positions = <LT2>;
+)
 
 
 // combos
 ZMK_COMBO(sleep,    &win_sleep,  RT3 RT4, NAV)  // put Windows to sleep, only active on NAV layer
 ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-tap, active on all layers
 ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
+
+
+/*Keymap*/
 
 ZMK_LAYER(base,
 &kp ESCAPE  &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
@@ -78,7 +87,7 @@ ZMK_LAYER(base,
 
 ZMK_LAYER(nav,
 &kp TILDE         &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &trans    &kp AMPERSAND  &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &mt UNDER KP_MINUS  &mt PLUS EQUAL
-&trans            &trans    &trans  &trans    &trans      &trans         &kp LEFT  &kp DOWN       &kp UP                           &kp RIGHT                          &trans              &kp PIPE
+&trans            &swapper    &trans  &trans    &trans      &trans         &kp LEFT  &kp DOWN       &kp UP                           &kp RIGHT                          &trans              &kp PIPE
 &kp LC(LEFT_GUI)  &trans    &trans  &trans    &trans      &trans         &kp INS   &kp HOME       &kp PAGE_DOWN                    &kp PG_UP                          &kp END             &trans
                                     &trans    &trans      &kp SPACE      &kp RET   &trans         &kp RALT
 
