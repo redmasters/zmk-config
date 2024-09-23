@@ -12,5 +12,11 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: main
+    - name: zmk-auto-layer
+      revision: main
+      path: modules/auto-layer
+    - name: zmk-tri-state
+      revision: main
+      path: modules/tri-state
   self:
     path: config
