@@ -162,6 +162,8 @@ ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
 
 /*Keymap*/
 
+ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
+
 ZMK_LAYER(base,
 //╭──────────┬──────┬── 
 &kp ESCAPE   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
@@ -201,5 +203,13 @@ ZMK_LAYER(num,
 &kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog 6     &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
                            &trans  &kp LEFT_ALT  &trans    &kp RET    &trans        &kp RALT
 
+)
+
+ZMK_LAYER(sys,
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_CLR    &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  _BT_SEL_KEYS_
+                        &trans  &trans  &trans    &trans  &trans  &trans
+ 
 )
 
