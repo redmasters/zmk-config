@@ -21,5 +21,13 @@ manifest:
     - name: zmk-tri-state
       revision: main
       path: modules/tri-state
+
+    - name: zmk
+      revision: going-modular
+      path: .
+      import:
+        file: app/west.yml
+        path-prefix: zmk
+
   self:
     path: config
