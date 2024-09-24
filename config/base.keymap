@@ -188,7 +188,7 @@ ZMK_LAYER(num,
 
 ZMK_LAYER(fn,
 //                                                                                       ─╮      ╭─
-&kp F12  &kp F7  &kp F8              &kp F9                &trans            &trans               &trans           &trans  &trans &trans  &trans  &tans
+&kp F12  &kp F7  &kp F8              &kp F9                &trans            &trans               &trans           &trans  &trans &trans  &trans  &trans
 //                                                                                        ┤      ├
 &kp F11  &kp F4  &hml LEFT_SHIFT F5  &hml LEFT_CONTROL F6  &hml LEFT_ALT     &hml LEFT_GUI        &trans           &trans  &trans &trans  &trans  &trans
 &kp F10  &kp F1  &kp F2              &kp F3                &trans            &trans               &kp PRINTSCREEN  &trans  &trans &trans  &trans  &trans
