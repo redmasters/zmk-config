@@ -72,8 +72,9 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
     MAKE_HRM(hm_combo_ ## NAME, &kp, TAP, SIDE THUMBS) \
     ZMK_COMBO_6(NAME, &hm_combo_ ## NAME HOLD 0, KEYPOS, LAYERS, COMBO_TERM, COMBO_IDLE)
 
-/*Mouse */
+/*Mouse, combos */
 #include "mouse.dtsi"
+#include "combos.dtsi"
 
 #define MT_CORE \
     flavor = "tap-preferred"; \
@@ -191,6 +192,7 @@ ZMK_TRI_STATE(swapper,
 ZMK_COMBO(sleep,    &win_sleep,  RT3 RT4, NAV)  // put Windows to sleep, only active on NAV layer
 ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-tap, active on all layers
 ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
+
 
 
 /*Keymap*/
