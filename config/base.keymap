@@ -18,6 +18,8 @@
 #define NUM 3
 #define SYS 4
 #define MOUSE 5
+#define GAME 6
+#define FUNGAME 7
 
 #define XXX &none
 #define ___ &trans
@@ -91,7 +93,7 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 #define NAV_UP    &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
 #define NAV_DOWN  &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
 #define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
-#define NAV_DEL   &mt LC(DEL)  DEL  
+#define NAV_DEL   &mt LC(DEL)  DEL
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
@@ -180,7 +182,7 @@ ZMK_MACRO(win_sleep,
     tap-ms = <5>;
     bindings = <&kp LG(X) &kp U &kp S>;
 )
- 
+
 // Alt+Tab swapper, requires PR #1366
 ZMK_TRI_STATE(swapper,
     bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
@@ -200,7 +202,7 @@ ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
-//╭──────────┬──────┬── 
+//╭──────────┬──────┬──
 &kp ESCAPE   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
 &kp TAB      &kp A  &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &hml LEFT_GUI G    &hmr LEFT_GUI H  &hmr LEFT_ALT J  &hmr LEFT_CONTROL K    &hmr LEFT_SHIFT L  &kp SEMICOLON  &kp SQT
 &kp LCTRL    &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &kp ENTER
@@ -215,16 +217,6 @@ ZMK_LAYER(nav,
 
 )
 
-/* ZMK_LAYER(fn,
-//                                                                   ─╮      ╭─
-&kp F12  &kp F7  &kp F8         &kp F9         &trans        &trans           &trans         &trans  &trans &trans  &trans  &trans
-//                                                                    ┤      ├
-&kp F11  &kp F4  &hml LSHFT F5  &hml LCTRL F6  &hml LALT     &hml LGUI        &trans           &trans  &trans &trans  &trans  &trans
-&kp F10  &kp F1  &kp F2         &kp F3         &trans        &trans           &kp PRINTSCREEN  &trans  &trans &trans  &trans  &trans
-                                &trans         &kp LCTRL     &kp LALT         &trans           &trans  &trans
-
-) */
-
 ZMK_LAYER(fn,
 &kp F12  &kp F7  &kp F8  &kp F9  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
 &kp F11  &kp F4  &kp F5  &kp F6  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
@@ -235,7 +227,7 @@ ZMK_LAYER(fn,
 ZMK_LAYER(num,
 &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5    &kp N6     &kp N7        &kp N8    &kp N9    &kp N0    &kp BSPC
 &kp LCTRL  &trans  &trans  &trans  &trans        &trans    &kp MINUS  &kp ASTERISK  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog 6     &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+&kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog GAME    &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
                            &trans  &kp LEFT_ALT  &trans    &kp RET    &trans        &kp RALT
 
 )
@@ -245,7 +237,7 @@ ZMK_LAYER(sys,
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 2  &bt BT_SEL 3
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1
                         &trans  &trans  &trans    &trans  &trans  &trans
- 
+
 )
 
 ZMK_LAYER(mouse,
@@ -258,4 +250,19 @@ ZMK_LAYER(mouse,
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤        ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
     ___                                               ___           ___                       &mkp LCLK     &mkp RCLK                                               ___
 //╰──────╯                                           ╰─────────────┴─────────────╯       ╰─────────────┴─────────────╯                                           ╰──────╯
+)
+
+ZMK_LAYER(game,
+          &kp ESC    &kp Q  &kp W  &kp E   &kp R         &kp T      &kp Y      &kp U   &kp I      &kp O    &kp P     &trans
+          &kp LSHFT  &kp A  &kp S  &kp D   &kp F         &kp G      &kp H      &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+          &trans     &kp Z  &kp X  &kp C   &kp V         &kp B      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                                   &trans  &lt FUNGAME SPACE  &kp TAB    &kp ENTER  &trans  &trans
+)
+
+ZMK_LAYER(fungame,
+&kp F12  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &tog GAME
+&kp F11  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans
+                                   &trans  &trans  &trans     &trans  &trans  &trans
+
 )
