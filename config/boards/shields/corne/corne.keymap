@@ -2,8 +2,8 @@
 #include "zmk-helpers/key-labels/42.h"
 
 /* map Zen's extra keys */
-//#define X_LH  &kp LGUI      // thumb row, left
-//#define X_RH  &smart_mouse  // thumb row, right
+/* #define X_LH  &kp LGUI      // thumb row, left
+#define X_RH  &smart_mouse  // thumb row, right */
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS
@@ -12,4 +12,4 @@
 #include "base.keymap"
 
 /* use 5-column layout for Zen */
-//ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)
+/*ZMK_APPLY_MATRIX_TRANSFORM(five_column_transform)*/
