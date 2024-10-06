@@ -1,6 +1,3 @@
-/* source key position labels */
-#include "zmk-helpers/key-labels/42.h"
-
 /* map Zen's extra keys */
 /* #define X_LH  &kp LGUI      // thumb row, left
 #define X_RH  &smart_mouse  // thumb row, right */
