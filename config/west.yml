@@ -8,6 +8,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    # include corne with dongle pro_micro and xiao compatible
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
 
   projects:
     - name: zmk-helpers
@@ -19,6 +22,10 @@ manifest:
     - name: zmk-tri-state
       revision: main
       path: modules/tri-state
+    # include corne with dongle pro_micro and xiao compatible
+    - name: zmk-config
+      remote: mctechnology17
+      revision: main
 
     # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
     # Zephyr with a path other than `zephyr` (as in `going-modular`).
