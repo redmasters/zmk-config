@@ -4,7 +4,7 @@ manifest:
     remote: urob
 
   remotes:
-    - name: upstream
+    - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
@@ -33,15 +33,12 @@ manifest:
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
-
     # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
     # Zephyr with a path other than `zephyr` (as in `going-modular`).
     - name: zmk
-      revision: going-modular
-      path: .
-      import:
-        file: app/west.yml
-        path-prefix: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
 
   self:
     path: config
