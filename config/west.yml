@@ -12,8 +12,8 @@ manifest:
     - name: redmasters
       url-base: https://github.com/redmasters
   # include dongle-display
-    - name: englmaxi
-      url-base: https://github.com/englmaxi
+    - name: radsonpatrick
+      url-base: https://github.com/radsonpatrick
 
   projects:
     - name: zmk-helpers
@@ -31,7 +31,7 @@ manifest:
       revision: feature/main-config
     # include dongle-display
     - name: zmk-dongle-display
-      remote: englmaxi
+      remote: radsonpatrick
       revision: main
     # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
     # Zephyr with a path other than `zephyr` (as in `going-modular`).
