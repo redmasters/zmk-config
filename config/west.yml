@@ -11,6 +11,9 @@ manifest:
     # include corne with dongle pro_micro and xiao compatible
     - name: redmasters
       url-base: https://github.com/redmasters
+  # include dongle-display
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
 
   projects:
     - name: zmk-helpers
@@ -26,6 +29,10 @@ manifest:
     - name: zmk-config-dongle
       remote: redmasters
       revision: feature/main-config
+    # include dongle-display
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: main
 
     # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
     # Zephyr with a path other than `zephyr` (as in `going-modular`).
