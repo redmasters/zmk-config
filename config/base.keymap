@@ -19,7 +19,8 @@
 #define SYS 4
 #define MOUSE 5
 #define GAME 6
-#define FUNGAME 7
+#define DOTA 7
+#define FUNGAME 8
 
 #define XXX &none
 #define ___ &trans
@@ -205,7 +206,7 @@ ZMK_LAYER(base,
 //╭──────────┬──────┬──
 &kp ESCAPE   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
 &kp TAB      &kp A  &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &hml LEFT_GUI G    &hmr LEFT_GUI H  &hmr LEFT_ALT J  &hmr LEFT_CONTROL K    &hmr LEFT_SHIFT L  &kp SEMICOLON  &kp SQT
-&kp LCTRL    &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &kp ENTER
+&kp LCTRL    &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &smart_shft
                                      &lt FN ESC           &lt NAV LEFT_GUI  &kp TAB         &kp RET       &lt NUM SPACE     &bs_del_num
 )
 
@@ -259,10 +260,16 @@ ZMK_LAYER(game,
                                    &trans  &lt FUNGAME SPACE  &kp TAB    &kp ENTER  &trans  &trans
 )
 
+ZMK_LAYER(dota,
+&trans        &kp Q  &kp W             &kp E           &kp R        &kp T      &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&trans        &kp A  &mt LEFT_SHIFT S  &mt LCTRL D     &mt LALT F   &kp G      &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LEFT_ALT  &kp Z  &kp X             &kp C           &kp V        &kp B      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                                       &kp LEFT_SHIFT  &lt FUNGAME SPACE  &kp TAB    &trans  &trans  &trans
+)
+
 ZMK_LAYER(fungame,
 &kp F12  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &tog GAME
 &kp F11  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &trans  &trans  &trans  &trans  &trans  &trans
 &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans
                                    &trans  &trans  &trans     &trans  &trans  &trans
-
 )
