@@ -202,7 +202,7 @@ ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
-DEF {
+base {
 //╭──────────┬──────┬──
 &kp ESCAPE   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
 &kp TAB      &kp A  &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &hml LEFT_GUI G    &hmr LEFT_GUI H  &hmr LEFT_ALT J  &hmr LEFT_CONTROL K    &hmr LEFT_SHIFT L  &kp SEMICOLON  &kp SQT
@@ -212,7 +212,7 @@ display-name = "base";
 }
 
 
-NAV {
+nav {
 &kp TILDE         &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR           &kp PERCENT    &trans    &kp AMPERSAND  &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &mt UNDER KP_MINUS  &mt PLUS EQUAL
 &trans            &swapper  &sk LEFT_SHIFT    &sk LEFT_CONTROL     &sk LEFT_ALT   &sk LEFT_GUI   NAV_LEFT  NAV_DOWN       NAV_UP   NAV_RIGHT  &kp RET              &kp PIPE
 &kp LC(LEFT_GUI)  &trans    &trans  &trans    &trans               &trans         &kp INS   &kp HOME       &kp PAGE_DOWN                    &kp PG_UP                          &kp END             &trans
@@ -220,7 +220,7 @@ NAV {
 display-name = "nav";
 }
 
-FN {
+fn{
 &kp F12  &kp F7  &kp F8  &kp F9  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
 &kp F11  &kp F4  &kp F5  &kp F6  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
 &kp F10  &kp F1  &kp F2  &kp F3  &trans     &trans          &kp PRINTSCREEN  &trans  &trans  &trans  &trans  &trans
@@ -228,7 +228,7 @@ FN {
 display-name = "fn";
 }
 
-NUM {
+num{
 &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5    &kp N6     &kp N7        &kp N8    &kp N9    &kp N0    &kp BSPC
 &kp LCTRL  &trans  &trans  &trans  &trans        &trans    &kp MINUS  &kp ASTERISK  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog GAME    &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
@@ -236,7 +236,7 @@ NUM {
 display-name = "num";
 }
 
-SYS {
+sys{
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_CLR    &bt BT_CLR_ALL
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 2  &bt BT_SEL 3
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1
@@ -245,7 +245,7 @@ display-name = "sys";
 
 )
 
-MOUSE {
+mouse {
 //╭───────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     ___     ___           ___           ___           ___           ___                      U_WH_L        U_WH_D        ___        U_WH_U       U_WH_R        ___
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
@@ -266,7 +266,7 @@ GAME {
 display-name = "game";
 }
 
-DOTA {
+dota {
 &trans        &kp Q  &kp W             &kp E           &kp R        &kp T      &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
 &trans        &kp A  &mt LEFT_SHIFT S  &mt LCTRL D     &mt LALT F   &kp G      &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
 &kp LEFT_ALT  &kp Z  &kp X             &kp C           &kp V        &kp B      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
@@ -274,7 +274,7 @@ DOTA {
 display-name = "dota";
 }
 
-FUNGAME {
+fungame {
 &kp F12  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &tog GAME
 &kp F11  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &trans  &trans  &trans  &trans  &trans  &trans
 &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans
