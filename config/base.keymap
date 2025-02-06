@@ -15,6 +15,7 @@
 #define GAME 6
 #define DOTA 7
 #define FUNGAME 8
+#define NUMPAD 9
 
 #define XXX &none
 #define ___ &trans
@@ -125,7 +126,7 @@ ZMK_HOLD_TAP(smart_num,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&lt NUM SPACE>, <&mo>, <&num_dance>;
+    bindings = <&mo>, <&num_dance>;
 )
 ZMK_TAP_DANCE(num_dance,
     tapping-term-ms = <200>;
@@ -204,7 +205,7 @@ base {
 &kp ESCAPE   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
 &kp TAB      &kp A  &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &hml LEFT_GUI G    &hmr LEFT_GUI H  &hmr LEFT_ALT J  &hmr LEFT_CONTROL K    &hmr LEFT_SHIFT L  &kp SEMICOLON  &kp SQT
 &kp LCTRL    &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &smart_shft
-                                     &lt FN ESC           &lt NAV LEFT_GUI  &kp TAB         &kp RET         &smart_num      &bs_del_num
+                                     &lt FN ESC           &lt NAV LEFT_GUI  &kp TAB         &kp RET         &lt NUM SPACE      &bs_del_num
     >;
 display-name = "base";
 };
@@ -231,14 +232,26 @@ display-name = "fn";
 };
 
 num{
-    bindings = < // TODO: add numpad
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5       &kp N6     &kp N7        &kp N8    &kp N9    &kp N0    &kp BSPC
-&kp LCTRL  &trans  &trans  &trans  &trans        &trans       &kp MINUS  &kp ASTERISK  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans  &trans  &trans  &trans        &tog GAME    ___        &kp N1        &kp N2    &kp N3  &kp PIPE  &kp TILDE
-                           &trans  &smart_num    &trans       &kp RET    &kp N0        &kp RALT
+    bindings = < 
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5       &kp N6         &kp N7        &kp N8    &kp N9    &kp N0    &kp BSPC
+&kp LCTRL  &trans  &trans  &trans  &trans        &trans       &kp MINUS      &kp ASTERISK  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans  &trans  &trans  &trans        &tog GAME    &tog NUMPAD    &kp N1        &kp N2    &kp N3  &kp PIPE  &kp TILDE
+                           &trans  &smart_num    &trans       ___            ___           &kp RALT
     >;
 display-name = "num";
 };
+
+    NUMPAD {
+      bindings = <
+&trans  &trans  &trans  &trans  &trans       &trans    &kp BACKSPACE  &kp N7  &kp N8  &kp N9  &kp MINUS        &kp PLUS
+&trans  &trans  &trans  &trans  &trans       &trans    &kp KP_DOT     &kp N4  &kp N5  &kp N6  &kp KP_ASTERISK  &kp KP_DIVIDE
+&trans  &trans  &trans  &trans  ___          ___       &trans         &kp N1  &kp N2  &kp N3  &trans           &trans
+                        &trans  &tog NUMPAD  &trans    &trans         &kp N0  ___
+      >;
+
+      display-name = "NUMPAD";
+    };
+
 
 sys{
     bindings = <
