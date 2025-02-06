@@ -197,7 +197,7 @@ ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
-  keymap {
+  / keymap {
     compatible = "zmk,keymap";
 base {
     bindings = <
