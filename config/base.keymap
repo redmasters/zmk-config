@@ -196,7 +196,7 @@ ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
 /*Keymap*/
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
-  / {
+
   keymap {
     compatible = "zmk,keymap";
 base {
@@ -305,8 +305,7 @@ fungame {
 &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans
                                    &trans  &trans  &trans     &trans  &trans  &trans
     >;
-display-name = "fungame";
-};
+    display-name = "fungame";
   };
 };
 
