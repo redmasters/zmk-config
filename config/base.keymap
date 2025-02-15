@@ -97,7 +97,7 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 #define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
 #define PIN_APP     &kp LG(LC(LS(A)))        // pin application across desktops
 #define DSK_MGR     &kp LA(GRAVE)            // desktop manager
-#define VOL_DOWN    &hmr RSHFT C_VOL_D
+#define VOL_DOWN    &hmr RSHFT C_VOL_DN
 #define VOL_UP      &kp C_VOL_UP
 
 // mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
