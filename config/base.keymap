@@ -93,11 +93,12 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
 #define DSK_PREV    &hmr LCTRL LG(LC(LEFT))  // previous desktop
-#define DSK_NEXT    &hmr LALT LG(LC(RIGHT))  // next     desktop
+#define DSK_NEXT    &hmr LCTRL LG(LC(RIGHT))  // next     desktop
 #define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
 #define PIN_APP     &kp LG(LC(LS(A)))        // pin application across desktops
 #define DSK_MGR     &kp LA(GRAVE)            // desktop manager
-#define VOL_DOWN    &hmr RSHFT C_VOL_DN
+#define VOL_DOWN    &hmr RSHFT C_VOL_D
+#define VOL_UP      &kp C_VOL_UP
 
 // mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
 #define MASK_MODS(NAME, MODS, BINDING) \
@@ -222,9 +223,9 @@ display-name = "nav";
 
 fn{
     bindings = <
-&kp F12  &kp F7  &kp F8  &kp F9  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
-&kp F11  &kp F4  &kp F5  &kp F6  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
-&kp F10  &kp F1  &kp F2  &kp F3  &trans     &trans          &kp PRINTSCREEN  &trans  &trans  &trans  &trans  &trans
+&kp F12  &kp F7  &kp F8  &kp F9  &trans     &trans          &trans           &trans  &trans    &trans    &trans  &trans
+&kp F11  &kp F4  &kp F5  &kp F6  &trans     &trans          DSK_PREV         VOL_UP  VOL_DOWN  DSK_NEXT  &trans  &trans
+&kp F10  &kp F1  &kp F2  &kp F3  &trans     &trans          &kp PRINTSCREEN  &trans  &trans    &trans    &trans  &trans
                          &trans  &kp LCTRL  &kp LEFT_ALT    &trans           &trans  &trans
     >;
 display-name = "fn";
@@ -265,7 +266,7 @@ display-name = "sys";
 mouse {
     bindings = <
 //╭───────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    ___     ___           ___           ___           ___           ___                      U_WH_L        U_WH_D        ___        U_WH_U       U_WH_R        ___
+    ___     ___           ___           ___           ___           ___                      U_WH_L        U_WH_D        U_WH_U       U_WH_R        ___            ___
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     ___     ___           ___           ___           ___           ___                       U_MS_L      U_MS_D        U_MS_U       U_MS_R          ___           ___
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
