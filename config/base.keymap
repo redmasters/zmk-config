@@ -4,8 +4,6 @@
 #include "zmk-helpers/helper.h"
 #include <dt-bindings/zmk/bt.h>
 
-
-
 #define DEF 0
 #define NAV 1
 #define FN 2
@@ -311,4 +309,4 @@ display-name = "fungame";
   };
 };
 
-
+/* vim: set ft=c tw=146: */
