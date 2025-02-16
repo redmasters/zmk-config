@@ -6,7 +6,7 @@ include:
     shield: corne_right
 
   - board: nice_nano_v2
-    shield: corne_dongle_pro_micro dongle_display_view_pro_micro
+    shield: corne_dongle_pro_micro dongle_display
 
   - board: nice_nano_v2
     shield: corne_left_peripheral
