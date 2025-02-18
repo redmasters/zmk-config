@@ -4,11 +4,14 @@ manifest:
     remote: urob
 
   remotes:
-    - name: upstream
+    - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-
+    # include corne with dongle pro_micro and xiao compatible
+    - name: redmasters
+      url-base: https://github.com/redmasters
+    
   projects:
     - name: zmk-helpers
       revision: main
@@ -19,15 +22,20 @@ manifest:
     - name: zmk-tri-state
       revision: main
       path: modules/tri-state
-
+    # include corne with dongle pro_micro and xiao compatible
+    - name: zmk-config-dongle
+      remote: redmasters
+      revision: feature/main-config
+    # include dongle-display
+    - name: zmk-dongle-display
+      remote: redmasters
+      revision: main
     # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
     # Zephyr with a path other than `zephyr` (as in `going-modular`).
     - name: zmk
-      revision: going-modular
-      path: .
-      import:
-        file: app/west.yml
-        path-prefix: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
 
   self:
     path: config

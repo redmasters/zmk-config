@@ -2,15 +2,7 @@
 #include <behaviors/num_word.dtsi> // requires auto-layer module
 #include <dt-bindings/zmk/keys.h>
 #include "zmk-helpers/helper.h"
-
-#ifdef CONFIG_WIRELESS
-    #include <dt-bindings/zmk/bt.h>
-    #define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
-#else
-    #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
-#endif
-
-
+#include <dt-bindings/zmk/bt.h>
 
 #define DEF 0
 #define NAV 1
@@ -19,7 +11,9 @@
 #define SYS 4
 #define MOUSE 5
 #define GAME 6
-#define FUNGAME 7
+#define DOTA 7
+#define FUNGAME 8
+#define NUMPAD 9
 
 #define XXX &none
 #define ___ &trans
@@ -78,6 +72,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 #include "mouse.dtsi"
 #include "combos.dtsi"
 
+
 #define MT_CORE \
     flavor = "tap-preferred"; \
     tapping-term-ms = <220>; \
@@ -98,11 +93,12 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
 #define DSK_PREV    &hmr LCTRL LG(LC(LEFT))  // previous desktop
-#define DSK_NEXT    &hmr LALT LG(LC(RIGHT))  // next     desktop
+#define DSK_NEXT    &hmr LCTRL LG(LC(RIGHT))  // next     desktop
 #define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
 #define PIN_APP     &kp LG(LC(LS(A)))        // pin application across desktops
 #define DSK_MGR     &kp LA(GRAVE)            // desktop manager
 #define VOL_DOWN    &hmr RSHFT C_VOL_DN
+#define VOL_UP      &kp C_VOL_UP
 
 // mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
 #define MASK_MODS(NAME, MODS, BINDING) \
@@ -170,9 +166,9 @@ ZMK_TAP_DANCE(copy_cut,
     bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
 
-// tap: backspace | shift + tap: delete | hold: num layer
-ZMK_MOD_MORPH(bs_del_num,
-    bindings = <&lt NUM BSPC>, <&kp DEL>;
+// tap: backspace | shift + tap: delete
+ZMK_MOD_MORPH(bs_del,
+    bindings = <&kp BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
@@ -200,49 +196,65 @@ ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
 /*Keymap*/
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
-
-ZMK_LAYER(base,
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+base {
+    bindings = <
 //╭──────────┬──────┬──
-&kp ESCAPE   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          &kp BSPC
-&kp TAB      &kp A  &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &hml LEFT_GUI G    &hmr LEFT_GUI H  &hmr LEFT_ALT J  &hmr LEFT_CONTROL K    &hmr LEFT_SHIFT L  &kp SEMICOLON  &kp SQT
-&kp LCTRL    &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &kp ENTER
-                                     &lt FN ESC           &lt NAV LEFT_GUI  &kp TAB         &kp RET       &lt NUM SPACE     &bs_del_num
-)
+___   &kp Q  &kp W             &kp E               &kp R           &kp T             &mt LS(F6) Y    &kp U           &kp I                 &mt LS(F9) O      &kp P          ___
+___   &kp A  &hml LEFT_SHIFT S &hml LEFT_CONTROL D &hml LEFT_ALT F &hml LEFT_GUI G   &hmr LEFT_GUI H &hmr LEFT_ALT J &hmr LEFT_CONTROL K   &hmr LEFT_SHIFT L &kp SEMICOLON  &kp SQT
+___   &kp Z  &kp X             &kp C               &kp V           &kp B             &kp N           &kp M           &kp COMMA             &kp DOT           &kp FSLH       &smart_shft
+                                     &lt FN ESC           &lt NAV LEFT_GUI  &kp TAB         &kp RET         &lt NUM SPACE      &bs_del
+    >;
+display-name = "base";
+};
 
-ZMK_LAYER(nav,
+
+nav {
+    bindings = <
 &kp TILDE         &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR           &kp PERCENT    &trans    &kp AMPERSAND  &mt LEFT_BRACE LEFT_PARENTHESIS  &mt RIGHT_BRACE RIGHT_PARENTHESIS  &mt UNDER KP_MINUS  &mt PLUS EQUAL
 &trans            &swapper  &sk LEFT_SHIFT    &sk LEFT_CONTROL     &sk LEFT_ALT   &sk LEFT_GUI   NAV_LEFT  NAV_DOWN       NAV_UP   NAV_RIGHT  &kp RET              &kp PIPE
 &kp LC(LEFT_GUI)  &trans    &trans  &trans    &trans               &trans         &kp INS   &kp HOME       &kp PAGE_DOWN                    &kp PG_UP                          &kp END             &trans
                                     &trans    &trans               &kp SPACE      &kp RET   CANCEL        &kp RALT
+    >;
+display-name = "nav";
+};
 
-)
+fn{
+    bindings = <
+&kp F12  &kp F7  &kp F8  &kp F9  &trans     &trans          &trans           &trans    &trans    &trans    &trans  &trans
+&kp F11  &kp F4  &kp F5  &kp F6  &trans     &trans          DSK_PREV         VOL_DOWN  VOL_UP    DSK_NEXT  &trans  &trans
+&kp F10  &kp F1  &kp F2  &kp F3  &trans     &trans          &kp PRINTSCREEN  &trans    &trans    &trans    &trans  &trans
+                         &trans  &kp LCTRL  &kp LEFT_ALT    &trans           &trans    &trans
+    >;
+display-name = "fn";
+};
 
-ZMK_LAYER(fn,
-&kp F12  &kp F7  &kp F8  &kp F9  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
-&kp F11  &kp F4  &kp F5  &kp F6  &trans     &trans          &trans           &trans  &trans  &trans  &trans  &trans
-&kp F10  &kp F1  &kp F2  &kp F3  &trans     &trans          &kp PRINTSCREEN  &trans  &trans  &trans  &trans  &trans
-                         &trans  &kp LCTRL  &kp LEFT_ALT    &trans           &trans  &trans
-)
+num{
+    bindings = < 
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5       &kp N6         &kp N7        &kp N8    &kp N9    &kp N0    &kp BSPC
+&kp LCTRL  &trans  &trans  &trans  &trans        &trans       &kp MINUS      &kp ASTERISK  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans  &trans  &trans  &trans        &tog GAME    ___            &kp N1        &kp N2    &kp N3  &kp PIPE  &kp TILDE
+                           &trans  &smart_num    &trans       ___            ___           &kp RALT
+    >;
+display-name = "num";
+};
 
-ZMK_LAYER(num,
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5    &kp N6     &kp N7        &kp N8    &kp N9    &kp N0    &kp BSPC
-&kp LCTRL  &trans  &trans  &trans  &trans        &trans    &kp MINUS  &kp ASTERISK  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans  &trans  &trans  &trans        &trans    &tog GAME    &kp PLUS      &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                           &trans  &kp LEFT_ALT  &trans    &kp RET    &trans        &kp RALT
-
-)
-
-ZMK_LAYER(sys,
+sys{
+    bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_CLR    &bt BT_CLR_ALL
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 2  &bt BT_SEL 3
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1
                         &trans  &trans  &trans    &trans  &trans  &trans
+    >;
+display-name = "sys";
+};
 
-)
-
-ZMK_LAYER(mouse,
+mouse {
+    bindings = <
 //╭───────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    ___     ___           ___           ___           ___           ___                      U_WH_L        U_WH_D        ___        U_WH_U       U_WH_R        ___
+    ___     ___           ___           ___           ___           ___                      U_WH_L        U_WH_D        U_WH_U       U_WH_R        ___            ___
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     ___     ___           ___           ___           ___           ___                       U_MS_L      U_MS_D        U_MS_U       U_MS_R          ___           ___
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
@@ -250,19 +262,56 @@ ZMK_LAYER(mouse,
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤        ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
     ___                                               ___           ___                       &mkp LCLK     &mkp RCLK                                               ___
 //╰──────╯                                           ╰─────────────┴─────────────╯       ╰─────────────┴─────────────╯                                           ╰──────╯
-)
+    >;
+display-name = "mouse";
+};
 
-ZMK_LAYER(game,
-          &kp ESC    &kp Q  &kp W  &kp E   &kp R         &kp T      &kp Y      &kp U   &kp I      &kp O    &kp P     &trans
-          &kp LSHFT  &kp A  &kp S  &kp D   &kp F         &kp G      &kp H      &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
-          &trans     &kp Z  &kp X  &kp C   &kp V         &kp B      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+GAME {
+    bindings = <
+          &kp ESC       &kp Q  &kp W  &kp E   &kp R         &kp T      &kp Y      &kp U   &kp I      &kp O    &kp P     &trans
+          &kp LSHFT     &kp A  &kp S  &kp D   &kp F         &kp G      &kp H      &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+          &kp LCTRL     &kp Z  &kp X  &kp C   &kp V         &kp B      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
                                    &trans  &lt FUNGAME SPACE  &kp TAB    &kp ENTER  &trans  &trans
-)
+    >;
+display-name = "game";
+};
 
-ZMK_LAYER(fungame,
+dota {
+    bindings = <
+&trans        &kp Q  &kp W             &kp E           &kp R        &kp T      &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&trans        &kp A  &mt LEFT_SHIFT S  &mt LCTRL D     &mt LALT F   &kp G      &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LEFT_ALT  &kp Z  &kp X             &kp C           &kp V        &kp B      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                                       &kp LEFT_SHIFT  &lt FUNGAME SPACE  &kp TAB    &trans  &trans  &trans
+    >;
+display-name = "dota";
+};
+
+fungame {
+    bindings = <
 &kp F12  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &tog GAME
 &kp F11  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &trans  &trans  &trans  &trans  &trans  &trans
 &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans
                                    &trans  &trans  &trans     &trans  &trans  &trans
+    >;
+display-name = "fungame";
+};
 
-)
+
+    NUMPAD {
+      bindings = <
+&trans  &trans  &trans  &trans  &trans       &trans    &kp BACKSPACE  &kp N7  &kp N8  &kp N9  &kp MINUS        &kp PLUS
+&trans  &trans  &trans  &trans  &trans       &trans    &kp KP_DOT     &kp N4  &kp N5  &kp N6  &kp KP_ASTERISK  &kp KP_DIVIDE
+&trans  &trans  &trans  &trans  ___          ___       &trans         &kp N1  &kp N2  &kp N3  &trans           &trans
+                        &trans  &tog NUMPAD  &trans    &trans         &kp N0  ___
+      >;
+
+      display-name = "NUMPAD";
+    };
+
+
+
+
+  };
+};
+
+/* vim: set ft=c tw=146: */
